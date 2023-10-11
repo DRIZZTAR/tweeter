@@ -1,12 +1,13 @@
 nav {
   display: flex;
-  height: 120px;
+  height: 75;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
   padding: 0 1.5em; /* 1.5ems of space on the right and left */
   align-items: center;
   justify-content: space-between;
+  position: fixed;
 }
 
 nav span {
@@ -20,16 +21,19 @@ nav a.write-tweet-button {
   margin-right: 20px; /* Create space between the button and the right edge of the nav */
   text-decoration: none; /* Remove underlines for anchor link */
   border-radius: 5px; /* Add rounded corners for the button */
+  font-size: initial;
 }
 
 nav a.write-tweet-button:hover {
   background-color: #4056A1; /* Change background color on hover */
   color: #FFFFFF; /* Change font color on hover */
+
 }
 
 nav .fa-angles-down {
-    margin-top: 0px;
+    margin-bottom: 10px;
     color: red;
+    font-size: initial;
 }
 
 .button-icon-container {
