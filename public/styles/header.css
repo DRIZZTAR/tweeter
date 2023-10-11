@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-image: url('https://www.transparenttextures.com/patterns/buried.png');
+  background-color: #e0c3c3;
+  height: 700px;
+  width: 100%;
+}
+
+/* ... rest of your CSS ... */
+
+
+header img {
+  margin: 0; /* Remove default margin on the image */
+}
+
+header h2 {
+  font-size: 1em;
+  color: white;
+  margin: 0; /* Remove default margin on the h2 */
+  text-align: center; 
+  margin-top: 10px; 
+}
+
+header strong {
+  font-display: bold; /* Make the text within the <strong> element bold */
+}

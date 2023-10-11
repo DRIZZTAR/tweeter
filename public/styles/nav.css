@@ -1,6 +1,6 @@
 nav {
   display: flex;
-  height: 75;
+  height: 120px;
   width: 100%;
   background-color: #4056A1;
   color: #FFFFFF;
@@ -21,7 +21,7 @@ nav a.write-tweet-button {
   margin-right: 20px; /* Create space between the button and the right edge of the nav */
   text-decoration: none; /* Remove underlines for anchor link */
   border-radius: 5px; /* Add rounded corners for the button */
-  font-size: initial;
+  font-size: inherit;
 }
 
 nav a.write-tweet-button:hover {
@@ -33,7 +33,7 @@ nav a.write-tweet-button:hover {
 nav .fa-angles-down {
     margin-bottom: 10px;
     color: red;
-    font-size: initial;
+    font-size: inherit;
 }
 
 .button-icon-container {
