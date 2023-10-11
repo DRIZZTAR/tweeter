@@ -4,7 +4,7 @@ header {
   align-items: center;
   flex-direction: column;
   background-image: url('https://www.transparenttextures.com/patterns/buried.png');
-  background-color: #e0c3c3;
+  background-color: #72b577;
   height: 700px;
   width: 100%;
 }
@@ -14,6 +14,7 @@ header {
 
 header img {
   margin: 0; /* Remove default margin on the image */
+  border-radius: 10px;
 }
 
 header h2 {
@@ -21,7 +22,7 @@ header h2 {
   color: white;
   margin: 0; /* Remove default margin on the h2 */
   text-align: center; 
-  margin-top: 10px; 
+  margin-top: 15px; 
 }
 
 header strong {
