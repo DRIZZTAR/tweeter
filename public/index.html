@@ -48,12 +48,17 @@
     </header>
     <!-- Page-specific (main) content here -->
 <main class="container">
-  <p>Heroes in a half shell: <strong>Teenage Mutant Ninja Turtles</strong>!</p>
-  <h2>Meet the Turtles:</h2>
-  <p>Leonardo - The leader and swordsman.</p>
-  <p>Donatello - The tech genius with a bo staff.</p>
-  <p>Raphael - The tough guy with sais.</p>
-  <p>Michelangelo - The fun-loving nunchaku master.</p>
+  <section class="new-tweet">
+    <h2>Compose Tweet</h2>
+    <form action="/tweets" method="post">
+      <label for="tweet-text">What are you humming about?</label>
+      <textarea name="text" id="tweet-text"></textarea>
+      <div>
+        <button type="submit">Tweet</button>
+        <output name="counter" class="counter" for="tweet-text">140</output>
+      </div>
+    </form>
+  </section>
 </main>
   </body>
 </html>
