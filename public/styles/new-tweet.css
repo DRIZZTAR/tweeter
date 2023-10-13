@@ -1,0 +1,58 @@
+.container {
+  background-image: url('https://www.transparenttextures.com/patterns/buried.png');
+  background-color: #ededeb;
+}
+
+.new-tweet {
+  padding: 20px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column; /* Stack child elements vertically */
+}
+
+.new-tweet textarea {
+  background-image: url('https://www.transparenttextures.com/patterns/buried.png');
+  background-color: #ededeb;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-bottom: 5px solid #000;
+  border-radius: 0;
+  outline: none;
+}
+
+.new-tweet textarea::placeholder {
+  color: #000000;
+  font-style: bold;
+}
+
+.new-tweet .button-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+
+.new-tweet button {
+  background-color: #4056A1;
+  color: #FFFFFF;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Bungee', sans-serif;
+  width: fit-content;
+}
+
+
+.new-tweet button:hover {
+  background-color: #344E91;
+}
+
+.new-tweet .counter {
+  font-size: 35px;
+  color: #000000;
+  font-family: 'Bungee', sans-serif;
+  width: fit-content;
+}
