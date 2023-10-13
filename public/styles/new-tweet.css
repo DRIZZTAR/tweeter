@@ -1,6 +1,7 @@
 .container {
-  background-image: url('https://www.transparenttextures.com/patterns/buried.png');
-  background-color: #ededeb;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-stripes-light.png');
+  background-color: #c9f1f2;
+  border-radius: 5px;
 }
 
 .new-tweet {
@@ -11,8 +12,8 @@
 }
 
 .new-tweet textarea {
-  background-image: url('https://www.transparenttextures.com/patterns/buried.png');
-  background-color: #ededeb;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-stripes-light.png');
+  background-color: #c9f1f2;
   width: 100%;
   padding: 10px;
   border: none;
@@ -22,7 +23,7 @@
 }
 
 .new-tweet textarea::placeholder {
-  color: #000000;
+  color: rgba(0, 0, 0, 0.7);
   font-style: bold;
 }
 
