@@ -1,3 +1,13 @@
+@keyframes rotate-scale-down {
+  0% {
+    transform: rotate(0) scale(1);
+  }
+  100% {
+    transform: rotate(360deg) scale(0.8);
+  }
+}
+
+
 nav {
   display: flex;
   height: 120px;
@@ -15,8 +25,8 @@ nav span {
 }
 
 nav a.write-tweet-button {
-  color: #FFFFFF; /* Font color */
-  background-color: #4056A1; /* Background color */
+  color: #4056A1; /* Font color */
+  background-color: #FFFFFF; /* Background color */
   padding: 5px 10px; /* Adjust padding as needed */
   margin-right: 20px; /* Create space between the button and the right edge of the nav */
   text-decoration: none; /* Remove underlines for anchor link */
@@ -25,15 +35,18 @@ nav a.write-tweet-button {
 }
 
 nav a.write-tweet-button:hover {
-  background-color: #4056A1; /* Change background color on hover */
-  color: #FFFFFF; /* Change font color on hover */
+  background-color: #40a140; /* Change background color on hover */
+  color: #FFFFFF; /* Change font color on hover */ 
 
 }
 
 nav .fa-angles-down {
-    margin-bottom: 10px;
-    color: red;
-    font-size: inherit;
+  display: flex;
+  margin-left: 10px;
+  margin-top: 10px;
+  color: red;
+  font-size: inherit;
+  align-items: center;
 }
 
 .button-icon-container {
