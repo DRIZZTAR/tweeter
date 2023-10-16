@@ -5,12 +5,9 @@ header {
   flex-direction: column;
   background-image: url('https://www.transparenttextures.com/patterns/buried.png');
   background-color: #72b577;
-  height: 700px;
+  height: 600px;
   width: 100%;
 }
-
-/* ... rest of your CSS ... */
-
 
 header img {
   margin: 0; /* Remove default margin on the image */

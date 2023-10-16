@@ -1,15 +1,16 @@
 /* Regular state styles */
 .tweet {
   background-color: #ffffff;
-  border-radius: 5px;
-  border: 1px solid #ccc;
+  background-image: url('https://www.transparenttextures.com/patterns/dark-stripes-light.png');
+  border: solid #000000;
   padding: 10px;
   margin: 10px;
   transition: box-shadow 0.2s;
 }
 
+/* Hover state for the entire tweet box */
 .tweet:hover {
-  box-shadow: 0 0 30px rgba(42, 4, 149, 0.2);
+  box-shadow: 0 0 5px 5px rgba(42, 4, 149, 0.4);
 }
 
 .tweet header {
@@ -22,18 +23,19 @@
   height: 90px;
 }
 
+/*user-info is the container for the user avatar, name*/
+.user-info {
+  display: flex;
+  flex-direction: row;
+  margin-right: auto;
+  margin-left: 10px;
+}
+
 .user-avatar {
   width: 50px;
   height: 50px;
   border-radius: 50%;
   margin-right: 10px;
-}
-
-.user-info {
-  display: flex;
-  flex-direction: row; 
-  margin-right: auto;
-  margin-left: 10px;
 }
 
 .user-name {
@@ -50,8 +52,8 @@
 .tweet-content {
   margin-bottom: 0px;
   color: rgba(0, 0, 0, 0.7);
-  font-style: bold;
   border-bottom: 5px solid #000;
+  font-weight: bold;
 }
 
 .icons {
@@ -60,17 +62,20 @@
   margin-bottom: 10px;
 }
 
+/* Regular state styles for icons */
 .icons i {
   margin-right: 10px;
   font-size: 18px;
   color: #888;
   cursor: pointer;
+  transition: color 0.2s; /* Add transition for smooth color change */
 }
 
-/* Hover state styles */
-.tweet:hover .icons i {
-  color: #000000;
+/* Hover state for individual icons (specific selector) */
+.icons i:hover {
+  color: #00f304;
 }
+
 
 /* Regular state of the tweet footer */
 article.tweet footer {
@@ -83,7 +88,7 @@ article.tweet footer {
 }
 
 article.tweet footer .timestamp {
-  margin-right: auto; /* Pushes the timestamp to the left */
+  margin-right: auto;
 }
 
 article.tweet footer .icons {
@@ -93,10 +98,5 @@ article.tweet footer .icons {
 
 /* Hover state of the tweet footer */
 article.tweet:hover footer {
-  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1); /* Add box-shadow on hover */
+  box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1);
 }
-
-article.tweet:hover footer .icons i {
-  color: #E11D74; /* Change icon color on hover */
-}
-
