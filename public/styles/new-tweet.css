@@ -2,6 +2,7 @@
   background-image: url('https://www.transparenttextures.com/patterns/dark-stripes-light.png');
   background-color: #90e7e8;
   border-radius: 5px;
+  width: 100%;
 }
 
 .new-tweet {
