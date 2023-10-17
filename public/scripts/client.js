@@ -80,6 +80,20 @@ $(document).ready(function() {
     }
   };
 
-  // Call the renderTweets function to display the tweets.
+  // Add an event listener for form submission and prevent default behavior
+  $('form').submit(function(event) {
+    event.preventDefault(); // Prevent the default form submission behavior
+
+    // Serialize the form data to a query string
+    const formData = $(this).serialize();
+    // Make an AJAX POST request to send the form data to the server
+    $.post('/tweets', formData, function(data) {
+      console.log('Data sent to server:', formData);
+      console.log('Response from server:', data);
+    });
+  });
+
+  // Call the renderTweets function to display the initial tweets.
   renderTweets(tweetData);
 });
+
