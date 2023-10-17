@@ -36,42 +36,42 @@ $(document).ready(function() {
   };
 
   // Test / driver code (temporary). Eventually will get this from the server.
-  const tweetData = [
-    {
-      "user": {
-        "name": "Raphael",
-        "avatars": "/images/ninja-turtle.png",
-        "handle": "@TurtleTime"
-      },
-      "content": {
-        "text": "New pizza place is top notch!"
-      },
-      "created_at": 1697324184304
-    },
-    {
-      "user": {
-        "name": "Newton",
-        "avatars": "https://i.imgur.com/73hZDYK.png",
-        "handle": "@SirIsaac"
-      },
-      "content": {
-        "text": "If I have seen further it is by standing on the shoulders of giants"
-      },
-      "created_at": 1697324184304
-    },
-    {
-      "user": {
-        "name": "Descartes",
-        "avatars": "https://i.imgur.com/nlhLi3I.png",
-        "handle": "@rd"
-      },
-      "content": {
-        "text": "Je pense, donc je suis"
-      },
-      "created_at": 1697410584304
-    },
-    // Add more tweet objects as needed here
-  ];
+  // const tweetData = [
+  //   {
+  //     "user": {
+  //       "name": "Raphael",
+  //       "avatars": "/images/ninja-turtle.png",
+  //       "handle": "@TurtleTime"
+  //     },
+  //     "content": {
+  //       "text": "New pizza place is top notch!"
+  //     },
+  //     "created_at": 1697324184304
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Newton",
+  //       "avatars": "https://i.imgur.com/73hZDYK.png",
+  //       "handle": "@SirIsaac"
+  //     },
+  //     "content": {
+  //       "text": "If I have seen further it is by standing on the shoulders of giants"
+  //     },
+  //     "created_at": 1697324184304
+  //   },
+  //   {
+  //     "user": {
+  //       "name": "Descartes",
+  //       "avatars": "https://i.imgur.com/nlhLi3I.png",
+  //       "handle": "@rd"
+  //     },
+  //     "content": {
+  //       "text": "Je pense, donc je suis"
+  //     },
+  //     "created_at": 1697410584304
+  //   },
+  //   // Add more tweet objects as needed here
+  // ];
 
   const renderTweets = function(tweets) {
     for (const tweet of tweets) {
@@ -80,20 +80,26 @@ $(document).ready(function() {
     }
   };
 
+  // Function to load tweets from the server
+  const loadTweets = function() {
+    $.get('/tweets', function(data) {
+      renderTweets(data);
+    });
+  };
+
   // Add an event listener for form submission and prevent default behavior
   $('form').submit(function(event) {
-    event.preventDefault(); // Prevent the default form submission behavior
-
-    // Serialize the form data to a query string
+    event.preventDefault();
     const formData = $(this).serialize();
-    // Make an AJAX POST request to send the form data to the server
     $.post('/tweets', formData, function(data) {
-      console.log('Data sent to server:', formData);
-      console.log('Response from server:', data);
+      console.log('Data sent to the server:', formData);
+      console.log('Response from the server:', data);
+      // After posting the new tweet, load tweets from the server
+      loadTweets();
     });
   });
 
-  // Call the renderTweets function to display the initial tweets.
-  renderTweets(tweetData);
+  // Load tweets from the server on page load
+  loadTweets();
 });
 
