@@ -31,11 +31,11 @@ $(document).ready(function() {
   };
 
   const renderTweets = function(tweets) {
-    for (const tweet of tweets) {
-      const $tweet = createTweetElement(tweet);
-      $('.tweet-container').append($tweet);
-    }
+    const $tweetContainer = $('.tweet-container');
+    const $newTweet = createTweetElement(tweets[tweets.length - 1]);
+    $tweetContainer.prepend($newTweet);
   };
+  
 
   const loadTweets = function() {
     $.get('/tweets', function(data) {
