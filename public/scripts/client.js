@@ -1,38 +1,37 @@
 $(document).ready(function() {
   const createTweetElement = function(tweet) {
-    // Create a new tweet article element
-    const $tweet = $('<article>').addClass('tweet');
-
-    // Create the header section of the tweet
-    const $header = $('<header>');
-    $header.append($('<img>').addClass('user-avatar').attr('src', tweet.user.avatars));
-    $header.append($('<h2>').addClass('user-name').text(tweet.user.name));
-    $header.append($('<span>').addClass('user-handle').text(tweet.user.handle));
-    $header.appendTo($tweet);
-
-    // Create the tweet content section
-    const $content = $('<div>').addClass('tweet-content');
-    $content.append($('<p>').text(tweet.content.text));
-    $content.appendTo($tweet);
-
-    // Create the footer section of the tweet
-    const $footer = $('<footer>');
-    $footer.append($('<span>').addClass('timestamp').text(formatTimeAgo(tweet.created_at)));
-    const $icons = $('<div>').addClass('icons');
-    $icons.append($('<i>').addClass('fa-solid fa-flag'));
-    $icons.append($('<i>').addClass('fa-solid fa-retweet'));
-    $icons.append($('<i>').addClass('fa-solid fa-heart'));
-    $footer.append($icons);
-    $footer.appendTo($tweet);
-
-    return $tweet;
+    const html = `
+      <article class="tweet">
+        <header>
+          <img class="user-avatar" src="${tweet.user.avatars}" alt="profile-picture">
+          <h2 class="user-name">${tweet.user.name}</h2>
+          <span class="user-handle">${tweet.user.handle}</span>
+        </header>
+        <div class="tweet-content">
+          <p>${tweet.content.text}</p>
+        </div>
+        <footer>
+          <span class="timestamp">${formatTimeAgo(tweet.created_at)}</span>
+          <div class="icons">
+            <i class="fa-solid fa-flag"></i>
+            <i class="fa-solid fa-retweet"></i>
+            <i class="fa-solid fa-heart"></i>
+          </div>
+        </footer>
+      </article>
+    `;
+  
+    // Create a jQuery element from the HTML string
+    return $(html);
   };
 
   // Helper function to format the timestamp as "X days ago"
   const formatTimeAgo = function(timestamp) {
     const currentTime = Date.now();
     const timeDiff = currentTime - timestamp;
-    const daysAgo = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    // 86400000 to represent the number of milliseconds in a day
+    const daysAgo = Math.floor(timeDiff / 86400000);
+  
     return `${daysAgo} days ago`;
   };
 
@@ -47,7 +46,7 @@ $(document).ready(function() {
       "content": {
         "text": "New pizza place is top notch!"
       },
-      "created_at": 1611116232227
+      "created_at": 1697324184304
     },
     {
       "user": {
