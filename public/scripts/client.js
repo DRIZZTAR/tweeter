@@ -33,7 +33,7 @@ $(document).ready(function() {
 
 // Helper function to format the timestamp using Timeago
   const formatTimeAgo = function(timestamp) {
-    return timeago.format(timestamp); // Use Timeago to format the timestamp
+    return timeago.format(timestamp);
   };
 
   const renderTweets = function(tweets) {
@@ -52,14 +52,17 @@ $(document).ready(function() {
   // event listener for form submission and prevent default behavior
   $('form').submit(function(event) {
     event.preventDefault();
+    $('.error-container').slideUp();
     const formData = $(this).serialize();
         
         // Basic data validation to alert user
         const tweetText = $(this).find('textarea[name="text"]').val();
         if (!tweetText) {
-          alert('Uh Oh! Looks like you forgot to enter a tweet. Thats ok, please enter your tweet.');
+          $('.error-message').html('<i class="fa-solid fa-triangle-exclamation"></i> Uh Oh! Looks like you forgot to enter a tweet. <i class="fa-solid fa-triangle-exclamation"></i>');
+          $('.error-container').slideDown();
         } else if (tweetText.length > 140) {
-          alert('Ooo thats a long tweet. Keep it to 140 characters or less');
+          $('.error-message').html('<i class="fa-solid fa-triangle-exclamation"></i> Oooo that\'s a long tweet. Keep it to 140 characters or less!');
+          $('.error-container').slideDown();
         } else {
 
     $.post('/tweets', formData, function(data) {

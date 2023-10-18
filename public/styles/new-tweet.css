@@ -5,6 +5,18 @@
   width: 100%;
 }
 
+.error-container {
+  display: none;
+  border: 5px solid #ff0000; /* Add other styling as needed */
+  background-image: url('https://www.transparenttextures.com/patterns/dark-stripes-light.png');
+  background-color: #90e7e8;
+  border-radius: 5px;
+}
+
+.error-message {
+  color: #ff0000; /* Red text color or other styling */
+}
+
 .new-tweet {
   padding: 20px;
   border-radius: 5px;

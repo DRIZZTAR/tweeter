@@ -40,7 +40,7 @@
           <a href="#" class="write-tweet-button">
             <strong>Write</strong> a New Tweet
           </a>
-          <i class="fa-solid fa-angles-down"></i>
+          <i class="fa-solid fa-angles-down fa-bounce"></i>
         </div>
       </div> 
     </nav>
@@ -54,6 +54,9 @@
     <!-- Page-specific (main) content here -->
     <main class="container">
       <section class="new-tweet">
+        <div class="error-container">
+          <p class="error-message"></p>
+        </div>        
         <form action="/tweets" method="post">
           <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
           <div class="new-tweet button-container">
