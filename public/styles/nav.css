@@ -32,13 +32,28 @@ nav a.write-tweet-button:hover {
 }
 
 
-nav .fa-angles-down {
+.fa-angles-down {
   display: flex;
   margin-left: 10px;
-  margin-top: 10px;
+  margin-top: 20px;
   color: red;
   font-size: inherit;
   align-items: center;
+  animation-name: bounce;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
 }
 
 .button-icon-container {
