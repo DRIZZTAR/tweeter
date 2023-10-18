@@ -47,12 +47,22 @@ $(document).ready(function() {
   $('form').submit(function(event) {
     event.preventDefault();
     const formData = $(this).serialize();
+        
+        // Basic data validation to alert user
+        const tweetText = $(this).find('textarea[name="text"]').val();
+        if (!tweetText) {
+          alert('Uh Oh! Looks like you forgot to enter a tweet. Thats ok, please enter your tweet.');
+        } else if (tweetText.length > 140) {
+          alert('Ooo thats a long tweet. Keep it to 140 characters or less');
+        } else {
+
     $.post('/tweets', formData, function(data) {
       console.log('Data sent to the server:', formData);
       console.log('Response from the server:', data);
       // After posting the new tweet, load tweets from the server
       loadTweets();
     });
+  }
   });
 
   loadTweets();
