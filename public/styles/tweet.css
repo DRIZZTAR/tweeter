@@ -52,8 +52,11 @@
 .tweet-content {
   margin-bottom: 0px;
   color: rgba(0, 0, 0, 0.7);
+  border: none;
   border-bottom: 5px solid #000;
-  font-weight: bold;
+  border-radius: 0;
+  outline: none; /* Allow text to wrap and break lines */
+  word-wrap: break-word; /* Break long words into multiple lines */
 }
 
 .icons {
