@@ -23,5 +23,5 @@ header h2 {
 }
 
 header strong {
-  font-display: bold; /* Make the text within the <strong> element bold */
+  font-weight: bold; /* Make the text within the <strong> element bold */
 }

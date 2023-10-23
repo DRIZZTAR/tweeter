@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+3:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -20,7 +21,7 @@
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
     <link rel="stylesheet" href="/styles/tweet.css" type="text/css" />
-
+    <link rel="stylesheet" href="/styles/responsive.css" type="text/css" />
 
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -44,31 +45,37 @@
         </div>
       </div> 
     </nav>
-    <!-- header to display username and avatar-->
-    <header>
-      <div>
-        <img src="/images/profile-hex.png"> 
-        <h2><strong>Peter</strong> Parker</h2>
-      </div>
-    </header>
-    <!-- Page-specific (main) content here -->
+
     <main class="container">
-      <section class="new-tweet">
-        <div class="error-container">
-          <p class="error-message"></p>
-        </div>        
-        <form action="/tweets" method="post">
-          <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
-          <div class="new-tweet button-container">
-            <button type="submit">Tweet</button>
-            <output name="counter" class="counter" for="tweet-text">140</output>
-          </div>          
-        </form>
-      </section>
-      <section class="tweet-container">
-        <!-- The hardcoded tweet was removed -->
-      </section>      
+        <!-- header to display username and avatar-->
+        <header>
+          <div>
+            <img src="/images/profile-hex.png"> 
+            <h2><strong>Amy</strong> Mansell</h2>
+          </div>
+        </header>
+
+        <!-- Page-specific content -->
+        <div class="content">
+            <section class="new-tweet">
+                <div class="error-container">
+                  <p class="error-message"></p>
+                </div>        
+                <form action="/tweets" method="post">
+                  <textarea name="text" id="tweet-text" placeholder="What are you humming about?"></textarea>
+                  <div class="new-tweet button-container">
+                    <button type="submit">Tweet</button>
+                    <output name="counter" class="counter" for="tweet-text">140</output>
+                  </div>          
+                </form>
+            </section>
+
+            <section class="tweet-container">
+                <!-- The hardcoded tweet was removed -->
+            </section>
+        </div>
     </main>
+
     <script src="/scripts/composer-char-count.js"></script>
   </body>
 </html>

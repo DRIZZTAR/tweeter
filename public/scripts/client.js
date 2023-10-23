@@ -38,9 +38,14 @@ $(document).ready(function() {
 
   const renderTweets = function(tweets) {
     const $tweetContainer = $('.tweet-container');
-    const $newTweet = createTweetElement(tweets[tweets.length - 1]);
-    $tweetContainer.prepend($newTweet);
+    // Empty the tweet container to prevent duplicate tweets
+    $tweetContainer.empty();
+    for (let tweet of tweets) {
+      const $tweet = createTweetElement(tweet);
+      $tweetContainer.prepend($tweet);
+    }
   };
+  
   
 
   const loadTweets = function() {
