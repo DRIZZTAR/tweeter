@@ -37,7 +37,6 @@ nav a.write-tweet-button:hover {
   margin-left: 10px;
   margin-top: 20px;
   color: red;
-  font-size: inherit;
   align-items: center;
   animation-name: bounce;
   animation-duration: 2s;
@@ -54,7 +53,7 @@ nav a.write-tweet-button:hover {
   100% {
     transform: translateY(0px);
   }
-}
+} 
 
 .button-icon-container {
   display: flex;
