@@ -8,7 +8,6 @@
   transition: box-shadow 0.2s;
 }
 
-/* Hover state for the entire tweet box */
 .tweet:hover {
   box-shadow: 0 0 5px 5px rgba(42, 4, 149, 0.4);
 }
@@ -16,11 +15,12 @@
 .tweet header {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
   background-image: url('https://www.transparenttextures.com/patterns/dark-stripes-light.png');
   background-color: #ffffff;
   flex-direction: row;
-  height: 90px;
+  height: 100px;
 }
 
 /*user-info is the container for the user avatar, name*/
@@ -47,6 +47,7 @@
   color: #888;
   margin-left: auto;
   margin-right: 10px;
+  
 }
 
 .tweet-content {
@@ -71,7 +72,7 @@
   font-size: 18px;
   color: #888;
   cursor: pointer;
-  transition: color 0.2s; /* Add transition for smooth color change */
+  transition: color 0.2s;
 }
 
 /* Hover state for individual icons (specific selector) */

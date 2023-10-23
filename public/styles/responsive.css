@@ -1,33 +1,31 @@
-/* Mobile-first approach */
 body {
   font-size: 16px;
 }
 
 .container {
-  padding: 0 15px;
+  padding: 120px 15px;
 }
 
 /* Starting from larger screens (e.g., desktops) */
 @media (min-width: 1024px) {
   body {
-    padding-top: 0px; /* Adjust this value based on the actual height of your navbar */
+    padding-top: 0px; 
   }
 
   .container {
     display: flex;
-    flex-wrap: nowrap; /* Ensure the content doesn't wrap to the next line */
-    gap: 20px;
+    gap: 10px;
     padding-top: 120px;
   }
 
   header {
     flex: 1 0 25%; /* take up 1/4 of the container width */
-    max-width: 25%;
+    border-radius: 5px;
   }
 
   .content {
-    flex: 3 0 75%; /* take up 3/4 of the container width */
-    max-width: 75%;
+    flex: 2 0 75%; /* take up 3/4 of the container width */
   }
+
 }
 

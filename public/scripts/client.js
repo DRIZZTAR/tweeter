@@ -26,8 +26,6 @@ $(document).ready(function() {
         </footer>
       </article>
     `;
-  
-    // Create a jQuery element from the HTML string
     return $(html);
   };
 

@@ -5,23 +5,24 @@ header {
   flex-direction: column;
   background-image: url('https://www.transparenttextures.com/patterns/buried.png');
   background-color: #72b577;
-  height: 600px;
+  height: 400px;
   width: 100%;
+  
 }
 
 header img {
-  margin: 0; /* Remove default margin on the image */
+  margin: 0;
   border-radius: 10px;
 }
 
 header h2 {
   font-size: 1em;
   color: white;
-  margin: 0; /* Remove default margin on the h2 */
+  margin: 0;
   text-align: center; 
   margin-top: 15px; 
 }
 
 header strong {
-  font-weight: bold; /* Make the text within the <strong> element bold */
+  font-weight: bold;
 }
