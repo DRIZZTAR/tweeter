@@ -18,11 +18,14 @@ module.exports = function(DataHelpers) {
   });
 
   tweetsRoutes.post("/", function(req, res) {
+    // Uncomment the below line to simulate a POST error: test to see if the error handling works and appears in error container
+    /*return res.status(500).json({ error: "Artificial POST error" });*/
+    
     if (!req.body.text) {
       res.status(400).json({ error: 'invalid request: no data in POST body'});
       return;
     }
-
+  
     const user = req.body.user ? req.body.user : userHelper.generateRandomUser();
     const tweet = {
       user: user,
@@ -31,7 +34,7 @@ module.exports = function(DataHelpers) {
       },
       created_at: Date.now()
     };
-
+  
     DataHelpers.saveTweet(tweet, (err) => {
       if (err) {
         res.status(500).json({ error: err.message });
