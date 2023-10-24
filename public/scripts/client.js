@@ -2,8 +2,8 @@ $(document).ready(function() {
 
   // Focus on tweet-text textarea when "Write a New Tweet" is clicked
   $(".write-tweet-button").on("click", function(event) {
-    event.preventDefault(); // Prevents the default action of the <a> tag
-    $("#tweet-text").focus(); // Sets focus to the tweet-text textarea
+    event.preventDefault();
+    $("#tweet-text").focus();
   });
   
   // Helper function to escape string for security
