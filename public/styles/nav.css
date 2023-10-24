@@ -16,12 +16,12 @@ nav span {
 }
 
 nav a.write-tweet-button {
-  color: #4056A1; /* Font color */
-  background-color: #FFFFFF; /* Background color */
-  padding: 5px 10px; /* Adjust padding as needed */
-  margin-right: 20px; /* Create space between the button and the right edge of the nav */
-  text-decoration: none; /* Remove underlines for anchor link */
-  border-radius: 5px; /* Add rounded corners for the button */
+  color: #4056A1;
+  background-color: #FFFFFF;
+  padding: 5px 10px;
+  margin-right: 20px;
+  text-decoration: none; /* Remove underline from the link */
+  border-radius: 5px;
   font-size: inherit;
 }
 

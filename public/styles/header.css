@@ -17,11 +17,6 @@ header img {
 header h2 {
   font-size: 1em;
   color: white;
-  margin: 0;
   text-align: center; 
   margin-top: 15px; 
-}
-
-header strong {
-  font-weight: bold;
 }

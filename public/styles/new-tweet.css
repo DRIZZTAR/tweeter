@@ -1,7 +1,6 @@
 .container {
   background-image: url('https://www.transparenttextures.com/patterns/dark-stripes-light.png');
   background-color: #90e7e8;
-  border-radius: 5px;
   width: 100%;
 }
 
@@ -43,7 +42,6 @@
 .new-tweet .button-container {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-direction: row;
 }
 
@@ -59,18 +57,16 @@
 
 
 .new-tweet button:hover {
-  background-color: #344E91;
+  background-color: #344e914c;
 }
 
 .new-tweet .counter {
   font-size: 35px;
   color: #000000;
   font-family: 'Bungee', sans-serif;
-  width: fit-content;
 }
 
 .new-tweet .counter.negative {
-  color: red; /* Set the text color to red for negative character count */
-  font-weight: bold;
+  color: red;
 }
 

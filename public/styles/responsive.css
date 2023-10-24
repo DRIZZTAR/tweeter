@@ -15,12 +15,11 @@ body {
   }
 
   header {
-    flex: 1 0 25%;
-    border-radius: 1px;
+    flex: 25%;
   }
 
   .content {
-    flex: 2 0 75%;
+    flex: 75%;
   }
 }
 
