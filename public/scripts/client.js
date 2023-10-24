@@ -53,10 +53,20 @@ $(document).ready(function() {
   };
   
   const loadTweets = function() {
-    $.get('/tweets', function(data) {
-      renderTweets(data);
+    $.ajax({
+      url: '/tweets',
+      method: 'GET',
+      success: function(data) {
+        renderTweets(data);
+      },
+      error: function(err) {
+        console.error('Failed to fetch tweets:', err);
+        const errorMessage = $('<div>').text('Failed to fetch tweets. Please try again later.');
+        $('body').append(errorMessage);
+      }
     });
   };
+  
 
   // Event listener for form submission
   $('form').submit(function(event) {
@@ -74,11 +84,21 @@ $(document).ready(function() {
       $('.error-message').html('<i class="fa-solid fa-triangle-exclamation"></i> Oooo that\'s a long tweet. Keep it to 140 characters or less!');
       $('.error-container').slideDown();
     } else {
-      $.post('/tweets', formData, function(data) {
-        console.log('Data sent to the server:', formData);
-        console.log('Response from the server:', data);
-        tweetTextArea.val('');  // Clear the textarea after posting the tweet
-        loadTweets();           // Load tweets from the server
+      $.ajax({
+        url: '/tweets',
+        method: 'POST',
+        data: formData,
+        success: function(data) {
+          console.log('Data sent to the server:', formData);
+          console.log('Response from the server:', data);
+          tweetTextArea.val('');  // Clear the textarea after posting the tweet
+          loadTweets();           // Load tweets from the server
+        },
+        error: function(err) {
+          console.error('Failed to post tweet:', err);
+          const errorMessage = $('<div>').text('Failed to post tweet. Please try again later.');
+          $('body').append(errorMessage);
+        }
       });
     }
   });

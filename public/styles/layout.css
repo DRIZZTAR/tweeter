@@ -26,29 +26,13 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
-main {
+ main {
   width: 100%;
   min-height: 100vh;
+  margin: 0 auto; /* Center align horizontally using auto margins */
   margin: 0 auto;
   background-image: url('https://www.transparenttextures.com/patterns/buried.png');
   background-color: #f4f1ec;
   color: white;
   text-align: center;
-}
-
-/* Starting for larger screens (e.g., desktops) */
-@media screen and (min-width: 1024px) {
-  .container {
-    display: flex;
-    gap: 10px;
-    padding-top: 120px;
-  }
-
-  header {
-    flex:25%;
-  }
-
-  .content {
-    flex:75%;
-  }
 }

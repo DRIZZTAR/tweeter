@@ -1,0 +1,22 @@
+body {
+  font-size: 16px;
+}
+.container {
+  padding: 120px 15px;
+}
+
+/* Starting from larger screens (e.g., desktops) */
+/* Starting for larger screens (e.g., desktops) */
+@media (min-width: 1024px) {
+  .container {
+    display: flex;
+    gap: 10px;
+    padding-top: 120px;
+  }
+  header {
+    flex: 25%;
+  }
+  .content {
+    flex: 75%;
+  }
+}
