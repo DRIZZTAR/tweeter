@@ -1,13 +1,5 @@
-body {
-  font-size: 16px;
-}
-
-.container {
-  padding: 120px 15px;
-}
-
 /* Starting for larger screens (e.g., desktops) */
-@media (min-width: 1024px) {
+@media screen and (min-width: 1024px) {
   .container {
     display: flex;
     gap: 10px;
@@ -15,11 +7,13 @@ body {
   }
 
   header {
-    flex: 25%;
+    display: flex;
+    flex:25%;
+    height: auto;
   }
 
   .content {
-    flex: 75%;
+    flex:75%;
   }
 }
 
