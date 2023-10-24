@@ -88,7 +88,7 @@ $(document).ready(function() {
     event.preventDefault();
     $('.error-container').slideUp();
     const formData = $(this).serialize();
-    const tweetText = $(this).find('textarea[name="text"]').val();
+    const tweetText = $(this).find('textarea[name="text"]').val().trim();
 
     if (!tweetText) {
       $('.error-message').html('<i class="fa-solid fa-triangle-exclamation"></i> Uh Oh! Looks like you forgot to enter a tweet. <i class="fa-solid fa-triangle-exclamation"></i>');
@@ -103,4 +103,3 @@ $(document).ready(function() {
 
   loadTweets();
 });
-
