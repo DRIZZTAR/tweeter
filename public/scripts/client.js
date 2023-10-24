@@ -5,15 +5,15 @@ $(document).ready(function() {
     event.preventDefault();
     $("#tweet-text").focus();
   });
-  
+
   // Helper function to escape string for security and prevent XSS
-  const escape = function(str) {
+  const escape = str => {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  const createTweetElement = function(tweet) {
+  const createTweetElement = tweet => {
     const html = `
       <article class="tweet">
         <header>
@@ -37,46 +37,59 @@ $(document).ready(function() {
     return $(html);
   };
 
-  // Helper function to format the timestamp using Timeago
-  const formatTimeAgo = function(timestamp) {
-    return timeago.format(timestamp);
-  };
+  const formatTimeAgo = timestamp => timeago.format(timestamp);
 
-  // Render tweets on the page
-  const renderTweets = function(tweets) {
+  const renderTweets = tweets => {
     const $tweetContainer = $('.tweet-container');
-    $tweetContainer.empty();  // Empty the tweet container to prevent duplicate tweets
-    for (let tweet of tweets) {
+    $tweetContainer.empty();
+    tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
       $tweetContainer.prepend($tweet);
-    }
+    });
+  };
+
+  const displayError = message => {
+    $('.error-message').html(message);
+    $('.error-container').slideDown();
   };
   
-  const loadTweets = function() {
+
+  const loadTweets = () => {
     $.ajax({
       url: '/tweets',
       method: 'GET',
-      success: function(data) {
-        renderTweets(data);
-      },
-      error: function(err) {
+      success: data => renderTweets(data),
+      error: err => {
         console.error('Failed to fetch tweets:', err);
-        const errorMessage = $('<div>').text('Failed to fetch tweets. Please try again later.');
-        $('body').append(errorMessage);
-      }
+        displayError('Failed to fetch tweets. Please try again later.');
+      }      
     });
   };
-  
 
-  // Event listener for form submission
+  const postTweet = formData => {
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: formData,
+      success: data => {
+        console.log('Data sent to the server:', formData);
+        console.log('Response from the server:', data);
+        $('textarea[name="text"]').val('');  // Clear the textarea after posting the tweet
+        loadTweets();
+      },
+      error: err => {
+        console.error('Failed to post tweet:', err);
+        displayError('Failed to post tweet. Please try again later.');
+      }      
+    });
+  };
+
   $('form').submit(function(event) {
     event.preventDefault();
     $('.error-container').slideUp();
     const formData = $(this).serialize();
-    const tweetTextArea = $(this).find('textarea[name="text"]');
-    const tweetText = tweetTextArea.val();
-        
-    // Basic data validation to alert user
+    const tweetText = $(this).find('textarea[name="text"]').val();
+
     if (!tweetText) {
       $('.error-message').html('<i class="fa-solid fa-triangle-exclamation"></i> Uh Oh! Looks like you forgot to enter a tweet. <i class="fa-solid fa-triangle-exclamation"></i>');
       $('.error-container').slideDown();
@@ -84,26 +97,10 @@ $(document).ready(function() {
       $('.error-message').html('<i class="fa-solid fa-triangle-exclamation"></i> Oooo that\'s a long tweet. Keep it to 140 characters or less!');
       $('.error-container').slideDown();
     } else {
-      $.ajax({
-        url: '/tweets',
-        method: 'POST',
-        data: formData,
-        success: function(data) {
-          console.log('Data sent to the server:', formData);
-          console.log('Response from the server:', data);
-          tweetTextArea.val('');  // Clear the textarea after posting the tweet
-          loadTweets();           // Load tweets from the server
-        },
-        error: function(err) {
-          console.error('Failed to post tweet:', err);
-          const errorMessage = $('<div>').text('Failed to post tweet. Please try again later.');
-          $('body').append(errorMessage);
-        }
-      });
+      postTweet(formData);
     }
   });
 
-  // Initial load of tweets when the page is ready
   loadTweets();
 });
 
