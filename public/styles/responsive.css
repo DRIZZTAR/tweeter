@@ -8,10 +8,6 @@ body {
 
 /* Starting from larger screens (e.g., desktops) */
 @media (min-width: 1024px) {
-  body {
-    padding-top: 0px; 
-  }
-
   .container {
     display: flex;
     gap: 10px;
@@ -19,13 +15,12 @@ body {
   }
 
   header {
-    flex: 1 0 25%; /* take up 1/4 of the container width */
-    border-radius: 5px;
+    flex: 1 0 25%;
+    border-radius: 1px;
   }
 
   .content {
-    flex: 2 0 75%; /* take up 3/4 of the container width */
+    flex: 2 0 75%;
   }
-
 }
 

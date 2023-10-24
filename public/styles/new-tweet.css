@@ -18,7 +18,7 @@
 }
 
 .new-tweet {
-  padding: 20px;
+  padding: 15px;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -55,7 +55,6 @@
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Bungee', sans-serif;
-  width: fit-content;
 }
 
 
