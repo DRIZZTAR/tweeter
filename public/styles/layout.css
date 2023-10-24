@@ -26,13 +26,10 @@ body {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- /* Your existing CSS here */
-
-/* Additional CSS */
 main {
   width: 100%;
   min-height: 100vh;
-  margin: 0 auto; /* Center align horizontally using auto margins */
+  margin: 0 auto;
   background-image: url('https://www.transparenttextures.com/patterns/buried.png');
   background-color: #f4f1ec;
   color: white;
