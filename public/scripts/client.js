@@ -75,6 +75,7 @@ $(document).ready(function() {
         console.log('Data sent to the server:', formData);
         console.log('Response from the server:', data);
         $('textarea[name="text"]').val('');  // Clear the textarea after posting the tweet
+        $(document).trigger('tweetPosted');  // Notify that the tweet was posted
         loadTweets();
       },
       error: err => {
@@ -82,7 +83,7 @@ $(document).ready(function() {
         displayError('Failed to post tweet. Please try again later.');
       }      
     });
-  };
+  };  
 
   $('form').submit(function(event) {
     event.preventDefault();
