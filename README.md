@@ -16,7 +16,7 @@ Welcome to Tweeter - your gateway to the chirpiest corner of the web! It's a sin
 
 ![Tweeter mobile view](/public/images/mobilePhoto.png)
 
-![Tweeter desktop](/public/images/mobilePhoto.png)
+![Tweeter desktop](/public/images/dsktopPhoto.png)
 
 ## Getting Started 🐣
 1. **Clone the repository**
