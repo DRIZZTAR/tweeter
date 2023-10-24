@@ -74,6 +74,14 @@
             </section>
         </div>
     </main>
+    <script>
+      $(document).ready(function() {
+          $('.write-tweet-button').on('click', function(event) {
+              event.preventDefault();
+              $('#tweet-text').focus(); // Set focus on the tweet text area
+          });
+      });
+    </script>
 
     <script src="/scripts/composer-char-count.js"></script>
   </body>
