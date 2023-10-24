@@ -30,7 +30,8 @@ body {
 
 /* Additional CSS */
 main {
-  width: 90%;
+  width: 100%;
+  min-height: 100vh;
   margin: 0 auto; /* Center align horizontally using auto margins */
   background-image: url('https://www.transparenttextures.com/patterns/buried.png');
   background-color: #f4f1ec;
