@@ -6,7 +6,7 @@ body {
   padding: 120px 15px;
 }
 
-/* Starting from larger screens (e.g., desktops) */
+/* Starting for larger screens (e.g., desktops) */
 @media (min-width: 1024px) {
   .container {
     display: flex;

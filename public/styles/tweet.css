@@ -91,7 +91,6 @@ article.tweet footer .icons {
   gap: 10px;
 }
 
-/* Hover state of the tweet footer */
 article.tweet:hover footer {
   box-shadow: 0px 5px 7px rgba(0, 0, 0, 0.1);
 }

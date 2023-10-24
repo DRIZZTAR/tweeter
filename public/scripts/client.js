@@ -6,14 +6,13 @@ $(document).ready(function() {
     $("#tweet-text").focus();
   });
   
-  // Helper function to escape string for security
+  // Helper function to escape string for security and prevent XSS
   const escape = function(str) {
     let div = document.createElement("div");
     div.appendChild(document.createTextNode(str));
     return div.innerHTML;
   };
 
-  // Create an HTML element for each tweet
   const createTweetElement = function(tweet) {
     const html = `
       <article class="tweet">
@@ -53,7 +52,6 @@ $(document).ready(function() {
     }
   };
   
-  // Load tweets from the server
   const loadTweets = function() {
     $.get('/tweets', function(data) {
       renderTweets(data);
