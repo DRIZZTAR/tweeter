@@ -52,7 +52,6 @@ $(document).ready(function() {
     $('.error-message').html(message);
     $('.error-container').slideDown();
   };
-  
 
   const loadTweets = () => {
     $.ajax({
@@ -83,7 +82,7 @@ $(document).ready(function() {
         displayError('Failed to post tweet. Please try again later.');
       }      
     });
-  };  
+  };
 
   $('form').submit(function(event) {
     event.preventDefault();
