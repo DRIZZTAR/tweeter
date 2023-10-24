@@ -1,7 +1,3 @@
-Of course! Here's a fun yet professional README for your Tweeter project:
-
----
-
 # 🐦 Tweeter Project
 
 Welcome to Tweeter - your gateway to the chirpiest corner of the web! It's a single-page micro-blogging platform. Share your fleeting thoughts in bite-sized chirps and join our ever-chirping community.
