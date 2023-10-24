@@ -45,7 +45,6 @@ main {
   }
 
   header {
-    display: flex;
     flex:25%;
   }
 
